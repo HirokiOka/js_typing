@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>JSTyping</title>
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="/css/prism.css">
+    </head>
+    <body>
+        <h1>JS Typing Game</h1>
+        <p class="info">
+            Filename:  {{filename}},
+            Letter count: <span id="score">0</span>,
+            Miss count: <span id="miss">0</span>
+        </p>
+        <div id="text-button"><p id="text">Change Code</p></div>
+        <p id="comment"></p>
+        {{!-- <p id="target">please wait...</p> --}}
+        <p>
+            <pre id="pre" class="language-JavaScript"><code id="typed"></code><code id="cursor" style="background-color:darkcyan;"></code><code id="untyped">{{code}}</code></pre>
+        </p>
+        <script src="/js/main.js"></script>
+        <script src="/js/prism.js"></script> 
+    </body>
+</html>

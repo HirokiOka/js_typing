@@ -1,0 +1,38 @@
+body {
+    background-color: black;
+    color: yellow;
+    padding-top: 40px;
+    font-family: 'Courier New', monospace;
+    text-align: center;
+}
+
+pre {
+    white-space: pre;
+}
+
+#untyped {
+    opacity: 0.2;
+}
+
+#typed {
+    opacity: 1;
+}
+
+#comment {
+    font-size: 32px;
+    letter-spacing: 3px;
+}
+
+.info {
+    color: white;
+}
+
+
+#text-button {
+    display: block;
+    cursor: pointer;
+    width: 160px;
+    text-align: center;
+    margin: auto;
+    border: 1px solid #232323;
+}
