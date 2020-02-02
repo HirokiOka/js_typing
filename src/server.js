@@ -6,7 +6,7 @@ const getJS = require('./utils/gist');
 const removeComments = require('./utils/parse');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const publicDirectoryPath = path.join(__dirname, '../public');
 const viewsPath = path.join(__dirname, '../views');
 
