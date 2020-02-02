@@ -12,6 +12,31 @@ let miss;
 let isPlaying = false;
 
 
+const playKeySound = () => {
+    const keySound = new Audio();
+    keySound.src = '../sound/key.mp3' ;
+    keySound.play();
+};
+
+const playMissSound = () => {
+    const missSound = new Audio();
+    const p = Math.random();
+    if (p < 1/3) {
+        missSound.src = '../sound/cat1.mp3';
+    } else if (p < 2/3) {
+        missSound.src = '../sound/cat2.mp3';
+    } else {
+        missSound.src = '../sound/cat3.mp3';
+    }
+    missSound.play();
+};
+
+const playClearSound = () => {
+    const clearSound = new Audio();
+    clearSound.src = '../sound/clear.mp3';
+    clearSound.play();
+}
+
 const updateTarget = () => {
     typed.textContent = code.substring(0, loc);
     cursor.textContent = code[loc];
@@ -41,12 +66,14 @@ window.addEventListener('keydown', e => {
 
     if ((e.key === code[loc]) || (code[loc] === '\n' && e.keyCode == 13)) {
         loc++;
+        playKeySound();
 
         if (loc === code.length) {
             const accuracy = score + miss === 0 ? 0 : score / (score + miss) * 100;
             comment.textContent = `clear!\n${accuracy.toFixed(1)}% accuracy!`;
             untyped.textContent = '';
             isPlaying = false;
+            playClearSound();
         }
 
         score++;
@@ -57,6 +84,7 @@ window.addEventListener('keydown', e => {
         if (e.keyCode !== 16 && e.keyCode !== 18) {
             miss++;
             missLabel.textContent = miss;
+            playMissSound();
         }
     }
 

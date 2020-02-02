@@ -1,7 +1,7 @@
 const path = require('path');
 const express = require('express');
-// const dotenv = require('dotenv');
-// dotenv.config();
+const dotenv = require('dotenv');
+dotenv.config();
 const getJS = require('./utils/gist');
 const removeComments = require('./utils/parse');
 
@@ -19,7 +19,6 @@ app.get('/', (req, res) => {
     getJS((code) => {
         const removed = removeComments(code);
         res.render('index', {
-            filename: 'sample.js',
             code: removed
         });
     })

@@ -4,7 +4,8 @@ const generate = require('@babel/generator').default;
 const removeCommeents = (code) => {
     const ast = babylon.parse(code);
     const output = generate(ast, {
-        comments: false
+        comments: false,
+        allowImportExportEverywhere: true
     }, code);
     return output.code;
 };
