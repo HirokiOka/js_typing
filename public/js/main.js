@@ -54,15 +54,17 @@ window.addEventListener('keydown', e => {
 
         updateTarget();
     } else {
-        if (e.keyCode !== 16) {
+        if (e.keyCode !== 16 && e.keyCode !== 18) {
             miss++;
             missLabel.textContent = miss;
         }
     }
 
     window.addEventListener('keydown', e => {
-        if (e.keyCode === 32 && e.target === document.body) {
-            e.preventDefault();
+        if (e.target === document.body) {
+            if (e.keyCode === 32) {
+                e.preventDefault();
+            }
         }
     });
 
