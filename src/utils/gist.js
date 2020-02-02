@@ -3,7 +3,7 @@ const path = require('path');
 const ENV_PATH = path.join(__dirname, '.env');
 require('dotenv').config({ path: ENV_PATH });
 
-// const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
+const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
 
 const getJS = (callback) => {
     const index = Math.floor(Math.random() * 30);
