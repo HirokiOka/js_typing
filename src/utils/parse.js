@@ -1,13 +1,19 @@
 const babylon = require('babylon');
 const generate = require('@babel/generator').default;
 
-const removeCommeents = (code) => {
-    const ast = babylon.parse(code);
-    const output = generate(ast, {
-        comments: false,
-        allowImportExportEverywhere: true
-    }, code);
+const removeComments = (code) => {
+    try {
+        const ast = babylon.parse(code);
+        const output = generate(ast, {
+            comments: false,
+            allowImportExportEverywhere: true,
+            sourceType: "module"
+        }, code);
     return output.code;
+    } catch (e) {
+        return code;
+    }
+    
 };
 
-module.exports = removeCommeents;
+module.exports = removeComments;
