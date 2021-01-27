@@ -1,4 +1,6 @@
-# js_typing
-
+# Description
 This is a typing game using GitHub gist.
-https://js-typing.herokuapp.com/
+
+# Licence
+MIT
+
