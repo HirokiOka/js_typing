@@ -7,13 +7,14 @@ const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
 
 const getJS = (callback) => {
     const index = Math.floor(Math.random() * 30);
-    const url = `https://api.github.com/gists/public?access_token=${ACCESS_TOKEN}&page=${index}&per_page=100`;
+    const url = `https://api.github.com/gists/public?page=${index}&per_page=100`;
     const options = {
         url,
         json: true,
         method: 'get',
         headers: {
-            'User-Agent': 'request'
+            'User-Agent': 'request',
+            'access_token': ACCESS_TOKEN
         }
     };
 
@@ -22,7 +23,7 @@ const getJS = (callback) => {
             callback('Unable to connect GitHub API');
         } else {
             request({ url: selectGist(body), json: true }, (err, {body}) => {
-                callback(body);
+              callback(body);
             });
         }
     });
