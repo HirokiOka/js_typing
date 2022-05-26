@@ -4,7 +4,6 @@ const ENV_PATH = path.join(__dirname, '.env');
 require('dotenv').config({ path: ENV_PATH });
 
 const ACCESS_TOKEN = process.env.ACCESS_TOKEN;
-
 const getJS = (callback) => {
     const index = Math.floor(Math.random() * 30);
     const url = `https://api.github.com/gists/public?page=${index}&per_page=100`;
@@ -40,4 +39,13 @@ const selectGist = (json) => {
 };
 
 module.exports = getJS;
+
+
+
+
+
+
+
+
+
 
